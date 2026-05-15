@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1>Bienvenido al Catalogo de Autos</h1>
+
+    <ul>
+    @foreach(Auto auto in ViewBag.Autos){
+        <li>
+        @auto.obtenerInfo()
+        </li>
+    }
+    </ul>
+</div>
+<div>
+<form action='@Url.Action("CargarAuto", "Home")' method="post">
+    Patente:
+    <input type="text" name="patente">
+    Marca:
+    <input type="text" name="marca">
+    Modelo:
+    <input type="text" name="modelo">
+    Año:
+    <input type="number" name="año">
+    Color:
+    <input type="radio" name="color" value="rojo">Rojo
+    <input type="radio" name="color" value="verde">Verde
+    <input type="radio" name="color" value="azul">Azul
+    <input type="submit" value="Enviar"/>
+</form>
+@if(ViewBag.Error != null){
+    <p>@ViewBag.Error</p>
+}
+</div>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<ul>
+@foreach (Alumno alumno in ViewBag.Alumnos){
+    <li>
+        <a href='@Url.Action("DetalleAlumno", "Home", new {id = alumno.ObtenerId()})'>@alumno.ObtenerNombre()</a>
+    </li>
+}
+</ul>
