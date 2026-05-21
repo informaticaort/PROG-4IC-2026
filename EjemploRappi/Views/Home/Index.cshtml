@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Bienvenido a Rappi!</h2>
+<h3>Elija su plato favorito</h3>
+
+<form action="@Url.Action("Index", "Home")" method="get">
+    <select name="categoria">
+        <option value="">Todos los platos</option>
+        <option value="Hamburguesas">Hamburguesas</option>
+        <option value="Ensaladas">Ensaladas</option>
+    </select>
+    <input type="submit" value="Ver opciones" />
+</form>
+
+@if(ViewBag.Categoria != null){
+    <h4>Categoria elegida: @ViewBag.Categoria</h4>
+}else{
+    <h4>Mostrando todos los platos</h4>
+}
+
+@foreach(Plato plato in ViewBag.Platos){
+    <p>@plato.Nombre</p>
+    <p>@plato.Precio</p>
+}
