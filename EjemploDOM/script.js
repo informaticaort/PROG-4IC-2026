@@ -6,6 +6,9 @@
   const divResumen   = document.getElementById("resumenDias");
   const divResultado = document.getElementById("resultado");
   const fbTitulo = document.getElementById("fb-titulo");
+  const fbNombre = document.getElementById("fb-nombre");
+  const fbDias = document.getElementById("fb-dias");
+  const fbEstado = document.getElementById("fb-estado");
  
   // Se ejecuta cada vez que el usuario escribe en el campo días
   function actualizarResumen() {
@@ -103,6 +106,9 @@
  
   function limpiarFeedbacks() {
    fbTitulo.innerHTML = "";
+   fbNombre.innerHTML = "";
+   fbDias.innerHTML = "";
+   fbEstado.innerHTML = "";
   }
  
   function limpiarFormulario() {
