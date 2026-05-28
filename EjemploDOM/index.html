@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de prestamo</title>
+</head>
+<body>
+   <h1> Registro de prestamos de libros </h1> 
+
+        <p>Nombre del alumno:</p><br>
+        <input type="text" id="nombreAlumno" placeholder="Ej: Lionel Scaloni"><br>
+        <p id="fb-nombre"></p>
+        
+        <p>Título del libro:</p><br>
+        <input type="text" id="titulo" placeholder="Ej: Clean Code"><br>
+        <p id="fb-titulo"></p>
+        
+        <p>Días de préstamo (máx. 14):</p><br>
+        <input type="number" id="diasPrestamo" min="1" max="14"
+            oninput="actualizarResumen()"><br>
+        <p id="fb-dias"></p>
+        
+        <p>Fecha de devolución estimada:</p><br>
+        <p id="resumenDias">— completá los días para ver la fecha —</p>
+        
+        <p for="estado">Estado del alumno:</p><br>
+        <select id="estado">
+        <option value="">Seleccioná un estado...</option>
+        <option value="activo">Activo — sin deudas</option>
+        <option value="deudor">Deudor — tiene libro sin devolver</option>
+        <option value="suspendido">Suspendido — sanción vigente</option>
+        </select><br>
+        <p id="fb-estado"></p>
+        
+        <br>
+        <button onclick="limpiarFormulario()">Limpiar</button>
+        <button onclick="registrarPrestamo()">Registrar préstamo</button>
+        
+        <div id="resultado"></div>
+
+   <script src="script.js"></script>
+</body>
+</html>
